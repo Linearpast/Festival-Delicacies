@@ -8,7 +8,6 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -50,7 +49,7 @@ public class StoveBlock extends BaseEntityBlock {
 
 
     @OnlyIn(Dist.CLIENT)
-    public void animateTick(BlockState stateIn, Level level, BlockPos pos, RandomSource rand) {
+    public void animateTick(BlockState stateIn, Level level, BlockPos pos, Random rand) {
         if ((Boolean) stateIn.getValue(StoveBlock.LIT)) {
             double x = (double) pos.getX() + 0.5;
             double y = (double) pos.getY();
@@ -160,7 +159,7 @@ public class StoveBlock extends BaseEntityBlock {
             if (!level.isClientSide) {
                 BlockEntity entity = level.getBlockEntity(pos);
                 if (entity instanceof StoveEntity stoveEntity) {
-                    NetworkHooks.openScreen((ServerPlayer) player, (StoveEntity) entity, pos);
+                    NetworkHooks.openGui((ServerPlayer) player, (StoveEntity) entity, pos);
                 } else {
                     throw new IllegalStateException("Our Container provider is missing");
                 }

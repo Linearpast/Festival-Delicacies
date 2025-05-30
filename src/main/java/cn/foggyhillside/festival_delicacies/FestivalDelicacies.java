@@ -43,7 +43,7 @@ public class FestivalDelicacies {
         ModBlockEntities.BLOCK_ENTITIES.register(eventBus);
         ModMenuTypes.MENU_TYPES.register(eventBus);
         ModRecipeSerializers.RECIPE_SERIALIZERS.register(eventBus);
-        ModRecipeTypes.RECIPE_TYPES.register(eventBus);
+        eventBus.addListener(ModRecipeTypes::register);
 
         eventBus.addListener(this::setup);
 
