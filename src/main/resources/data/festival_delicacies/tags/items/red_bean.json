@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "#forge:vegetables/red_bean",
+    "#forge:crops/red_bean"
+  ]
+}

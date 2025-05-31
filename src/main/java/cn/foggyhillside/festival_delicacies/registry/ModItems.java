@@ -31,11 +31,11 @@ public class ModItems {
     public static final RegistryObject<Item> RED_BEAN_PASTE = ITEMS.register("red_bean_paste",
             () -> new BowlItem(new Item.Properties().craftRemainder(Items.BOWL).stacksTo(16).food(FoodList.RED_BEAN_PASTE).tab(FestivalDelicacies.FestivalDelicaciesTab)));
     public static final RegistryObject<Item> RED_BEAN = ITEMS.register("red_bean",
-            () -> new Item(new Item.Properties().tab(FestivalDelicacies.FestivalDelicaciesTab)));
+            () -> new ItemNameBlockItem(ModBlocks.RED_BEAN.get(), new Item.Properties().tab(FestivalDelicacies.FestivalDelicaciesTab)));
     public static final RegistryObject<Item> RICE = ITEMS.register("rice",
             () -> new Item(new Item.Properties().tab(FestivalDelicacies.FestivalDelicaciesTab)));
     public static final RegistryObject<Item> JUJUBE = ITEMS.register("jujube",
-            () -> new Item(new Item.Properties().food(FoodList.JUJUBE).tab(FestivalDelicacies.FestivalDelicaciesTab)));
+            () -> new ItemNameBlockItem(ModBlocks.JUJUBE.get(), new Item.Properties().food(FoodList.JUJUBE).tab(FestivalDelicacies.FestivalDelicaciesTab)));
     public static final RegistryObject<Item> PRESERVED_MEAT = ITEMS.register("preserved_meat",
             () -> new Item(new Item.Properties().food(FoodList.PRESERVED_MEAT).tab(FestivalDelicacies.FestivalDelicaciesTab)));
     public static final RegistryObject<Item> BAMBOO_LEAF = ITEMS.register("bamboo_leaf",

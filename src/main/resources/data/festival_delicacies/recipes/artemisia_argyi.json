@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    [
+      {
+        "item": "minecraft:grass"
+      }
+    ]
+  ],
+  "result": {
+    "item": "festival_delicacies:artemisia_argyi"
+  }
+}

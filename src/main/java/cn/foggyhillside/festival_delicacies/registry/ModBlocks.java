@@ -33,4 +33,8 @@ public class ModBlocks {
             () -> new EggplantBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
     public static final RegistryObject<Block> GREEN_ONION = BLOCKS.register("greenonion",
             () -> new GreenOnionBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
+    public static final RegistryObject<Block> RED_BEAN = BLOCKS.register("red_bean",
+            () -> new RedBeanBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
+    public static final RegistryObject<Block> JUJUBE = BLOCKS.register("jujube",
+            () -> new RedBeanBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
 }
