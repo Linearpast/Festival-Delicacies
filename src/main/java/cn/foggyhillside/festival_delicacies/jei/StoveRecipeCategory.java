@@ -16,6 +16,7 @@ import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -23,6 +24,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.Arrays;
 
+@SuppressWarnings("removal")
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
 public class StoveRecipeCategory implements IRecipeCategory<StoveRecipe> {
@@ -62,7 +64,7 @@ public class StoveRecipeCategory implements IRecipeCategory<StoveRecipe> {
 
     @Override
     public Component getTitle() {
-        return Component.translatable("block.festival_delicacies.stove");
+        return new TranslatableComponent("block.festival_delicacies.stove");
     }
 
     @Override
@@ -86,6 +88,16 @@ public class StoveRecipeCategory implements IRecipeCategory<StoveRecipe> {
         } else {
             this.lit.draw(matrixStack, 94, 52);
         }
+    }
+
+    @Override
+    public ResourceLocation getUid() {
+        return UID;
+    }
+
+    @Override
+    public Class<? extends StoveRecipe> getRecipeClass() {
+        return StoveRecipe.class;
     }
 
     @Override

@@ -7,6 +7,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.ItemStack;
@@ -49,11 +50,11 @@ public class StoveScreen extends AbstractContainerScreen<StoveMenu> {
         if (this.isHovering(94, 52, 15, 18, (double)mouseX, (double)mouseY)) {
             List<Component> tooltip = new ArrayList();
             if(!menu.entity.getBlockState().getValue(LIT)){
-                tooltip.add(Component.translatable(FestivalDelicacies.MOD_ID + ".stove" + ".not_lit" ));
+                tooltip.add(new TranslatableComponent(FestivalDelicacies.MOD_ID + ".stove" + ".not_lit" ));
             }else if(!menu.entity.getLevel().getBlockState(menu.entity.getBlockPos().above()).is(ModTags.IS_POT)){
-                tooltip.add(Component.translatable(FestivalDelicacies.MOD_ID + ".stove" + ".lit" ));
+                tooltip.add(new TranslatableComponent(FestivalDelicacies.MOD_ID + ".stove" + ".lit" ));
             }else {
-                tooltip.add(Component.translatable(FestivalDelicacies.MOD_ID + ".stove" + ".pot" ));
+                tooltip.add(new TranslatableComponent(FestivalDelicacies.MOD_ID + ".stove" + ".pot" ));
             }
             this.renderComponentTooltip(poseStack, tooltip, mouseX, mouseY);
         }
